@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider, ClerkLoaded, ClerkLoading } from "@clerk/nextjs";
 import Navbar from "@/components/Navbar";
 import { dark } from "@clerk/themes";
+import { Spin } from "antd";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export default function RootLayout({
         <body className={inter.className}>
           <ClerkLoading>
             <div className="flex items-center justify-center h-screen text-2xl">
-              LOADING...
+              <Spin />
             </div>
           </ClerkLoading>
           <ClerkLoaded>
